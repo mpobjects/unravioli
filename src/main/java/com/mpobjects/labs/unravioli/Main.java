@@ -126,10 +126,8 @@ public class Main {
 		}
 		aWriter.writeAttribute("incoming", Integer.toString(reversedCnt));
 
-		if (reversedCnt > aEntry.getValue().size()) {
-			for (XrefEntry src : aEntry.getValue().values()) {
-				writeXrefImportSource(aWriter, src);
-			}
+		for (XrefEntry src : aEntry.getValue().values()) {
+			writeXrefImportSource(aWriter, src);
 		}
 
 		aWriter.writeEndElement();
